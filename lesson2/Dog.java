@@ -7,7 +7,7 @@
 */
 public class Dog {
     public int _weight;
-
+    public static String type = "Doggie";
     public Dog(int weight) {
         _weight = weight;
     }
@@ -20,4 +20,14 @@ public class Dog {
             System.out.println("Bark!");
         }
     }
+    public static Dog maxDog(Dog d1, Dog d2) {
+        if(d1._weight > d2._weight)return d1;
+        return d2;
+    }
+
+    public Dog compareMaxDog(Dog d2) {
+        if(this._weight > d2._weight)return this;
+        return d2;
+    }
+
 }
