@@ -1,3 +1,4 @@
+package lesson3;
 public class Primitive {
     public static void main(String[] args) {
         int x = 2;
