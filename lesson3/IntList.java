@@ -57,6 +57,10 @@ public class IntList {
      */
     public static IntList dincrList(IntList L, int x) {
         /* Your code here. */
+        L.first += x;
+        if (L.rest != null) {
+            L.rest = incrList(L.rest, x);
+        }
         return L;
     }
 
@@ -81,7 +85,7 @@ public class IntList {
         IntList l = new IntList(5, null);
         l = new IntList(10, l);
         l = new IntList(15, l);
-        System.out.println(incrList(l, 2).first);
+        System.out.println(dincrList(l, 2).first);
         System.out.println(incrList(l, 2).rest.first);
         System.out.println(incrList(l, 2).rest.rest.first);
     }
