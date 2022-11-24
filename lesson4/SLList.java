@@ -19,10 +19,12 @@ public class SLList {
     SLList L = new SLList(15);
     L.addFirst(10);
     L.addFirst(5);
+    L.addLast(12);
+    System.out.println(L.size());
     System.out.println(L.getFirst());
   }
 
-  /** Adds x to the front of the list */
+  /** Adds an item to the front of the list */
   public void addFirst(int x){
     first = new IntNode(x,first);
   }
@@ -30,6 +32,26 @@ public class SLList {
   /** Returns the first item in the list */
   public int getFirst() {
     return first.item;  
+  }
+
+  /** Adds an item to the end of the list */
+  public void addLast(int x) {
+    IntNode p = first;
+    /** Move last until ite reaches the end of the list */
+    while (p.next != null) {
+      p = p.next;
+    }
+    p.next = new IntNode(x,null);
+  }
+
+  private static int getSize(IntNode p){
+    System.out.println(p.item);
+    if(p.next == null)return 1;
+    return 1 + getSize(p.next);
+  }
+
+  public int size(){
+    return getSize(first);
   }
 }
 
