@@ -41,4 +41,20 @@ public class Planet {
       double F = Planet.G * this.mass * rocinante.mass / Math.pow(r, 2);
       return F;
     }
+    /** A method to calculate the F_x of two planet */
+    public double calcForceExertedByX(Planet rocinante){
+      double r = this.calcDistance(rocinante);
+      double F = Planet.G * this.mass * rocinante.mass / Math.pow(r, 2);
+      double d_x = rocinante.xxPos - this.xxPos;
+      double F_x = F * d_x / r;
+      return F_x;
+    }
+    /** A method to calculate the F_y of two planet */
+    public double calcForceExertedByY(Planet rocinante){
+      double r = this.calcDistance(rocinante);
+      double F = Planet.G * this.mass * rocinante.mass / Math.pow(r, 2);
+      double d_y = rocinante.yyPos - this.yyPos;
+      double F_y = F * d_y / r;
+      return F_y;
+    }
 }
