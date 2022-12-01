@@ -3,7 +3,7 @@ public class Planet {
     public double xxPos;
     /**  Its current y position */
     public double yyPos;
-    /**  ts current velocity in the x direction*/
+    /**  ts current velocity in the x direction */
     public double xxVel;
     /** Its current velocity in the y direction */
     public double yyVel;
@@ -11,6 +11,7 @@ public class Planet {
     public double mass;
     /** The name of the file that corresponds to the image that depicts the planet (for example .junpier.gif) */
     public String imgFileName;
+    static double G = 6.67 * Math.pow(10,-11);
     public Planet(double xP, double yP, double xV, double yV, double m, String img){
       xxPos = xP;
       yyPos = yP;
@@ -26,5 +27,18 @@ public class Planet {
       yyVel = p.yyVel;
       mass = p.mass;
       imgFileName = p.imgFileName;
+    }
+    /** A method to calculate the r of two planet */
+    public double calcDistance(Planet rocinante){
+      double d_x = Math.abs(rocinante.xxPos - this.xxPos);
+      double d_y = Math.abs(rocinante.yyPos - this.yyPos);
+      double distance = Math.sqrt(Math.pow(d_x,2) + Math.pow(d_y,2));
+      return distance;
+    }
+    /** A method to calculate the F of two planet */
+    public double calcForceExertedBy(Planet rocinante){
+      double r = this.calcDistance(rocinante);
+      double F = Planet.G * this.mass * rocinante.mass / Math.pow(r, 2);
+      return F;
     }
 }
