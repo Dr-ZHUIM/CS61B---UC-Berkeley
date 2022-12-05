@@ -18,6 +18,7 @@ public class TestCalcNetForceExertedByXY {
      *  @param  actual      Double received
      *  @param  label       Label for the 'test' case
      */
+    
     private static void checkEquals(double expected, double actual, String label) {
         if (expected == actual) {
             System.out.println("PASS: " + label + ": Expected " + expected + " and you gave " + actual);
