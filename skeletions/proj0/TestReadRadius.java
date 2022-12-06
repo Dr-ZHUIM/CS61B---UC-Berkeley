@@ -34,5 +34,6 @@ public class TestReadRadius {
 
     public static void main(String[] args) {
         checkReadRadius();
+        
     }
 }
