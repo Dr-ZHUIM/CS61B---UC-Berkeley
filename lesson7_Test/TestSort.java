@@ -1,12 +1,13 @@
 package lesson7_Test;
 
 public class TestSort {
-
   /** This will test the Sort.sort() method */
   public static void testSort(){
     String[] input = new String[]{"You", "had", "breakfast", "didn't", "you"};
     // String[] expected = new String[]{"You", "had", "breakfast", "didn't", "you"};
     String[] expected = new String[]{"didn't", "you", "You", "had", "breakfast"};
+    
+    org.junit.Assert.assertEquals();
 
     Sort.sort(input);
 
