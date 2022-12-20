@@ -25,4 +25,6 @@
 
 **The Bad:**
 - Code is more verbose.
-- Code is less general. There is a way around this in Java called generics
+- Code is less general. There is a way around this in Java called generics  
+  
+
