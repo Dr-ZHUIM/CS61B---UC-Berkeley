@@ -1,12 +1,14 @@
 package lesson6_ALists;
 
+import lesson8_inheritance_implements.MyList;
+
 /* Invariant
  *  - addLast: The next item we want to add, will go into position size.
  *  - getLast: The item we want to return is in position size - 1.
  *  - size: The nubmer of items in the list should be size.
  */
 
-public class AList<Item> {
+public class AList<Item> implements MyList<Item> {
     private Item[] items;
     private int size;
 
